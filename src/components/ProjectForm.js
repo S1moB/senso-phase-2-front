@@ -97,6 +97,14 @@ const ProjectForm = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:8080/senso/project/', formData);
+      setFormData({
+        projectId: '',
+        startDate: '',
+        endDate: '',
+        assignedUser: null,
+        projectCategory: {},
+        projectBudget: null
+      })
     } catch (error) {
       console.error('Error creating/updating project:', error);
     }

@@ -51,23 +51,19 @@ const CategoryProjectList = () => {
                     <h3>Projects for Category: {selectedCategory}</h3>
                     <ul>
                         {projects.map((project) => (
-                             <ul>
-                             {projects.map((project) => (
-                                 <li key={project.projectId}>
-                                     <strong>Project ID: </strong> {project.projectId} <br />
-                                     <strong>Start Date: </strong> {format(new Date(project.startDate), 'dd-MM-yyyy')} <br />
-                                     <strong>End Date: </strong> {format(new Date(project.endDate), 'dd-MM-yyyy')} <br />
-                                     <strong>Assigned User: </strong>
-                                     <Link to={`/user-projects/${project.assignedUser?.userId}`}>
-                                         {project.assignedUser.userName}
-                                     </Link>
-                                     <br />
-                                     <strong>Project Budget: </strong> {project.projectBudget?.budgetAmount} euros for {project.projectBudget?.budgetDuration} days <br />
-                                     <strong>Project Category: </strong> {project.projectCategory.categoryName} (Code: {project.projectCategory.categoryCode})
-                                     <hr />
-                                 </li>
-                             ))}
-                         </ul>
+                            <li key={project.projectId}>
+                                <strong>Project ID: </strong> {project.projectId} <br />
+                                <strong>Start Date: </strong> {format(new Date(project.startDate), 'dd-MM-yyyy')} <br />
+                                <strong>End Date: </strong> {format(new Date(project.endDate), 'dd-MM-yyyy')} <br />
+                                <strong>Assigned User: </strong>
+                                <Link to={`/user-projects/${project.assignedUser?.userId}`}>
+                                    {project.assignedUser.userName}
+                                </Link>
+                                <br />
+                                <strong>Project Budget: </strong> {project.projectBudget?.budgetAmount} euros for {project.projectBudget?.budgetDuration} days <br />
+                                <strong>Project Category: </strong> {project.projectCategory.categoryName} (Code: {project.projectCategory.categoryCode})
+                                <hr />
+                            </li>
                         ))}
                     </ul>
                 </div>
